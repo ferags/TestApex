@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from pyunitreport import HTMLTestRunner
-import page.HomePage
 
 class searchBarTests(unittest.TestCase):
 
@@ -16,7 +15,6 @@ class searchBarTests(unittest.TestCase):
     
     def test_search_text_field(self):
         search_field = self.driver.find_element(By.ID,"mainSearchbar")
-        #search_field = page.HomePage.homePage.setSearchBar()
         search_field.send_keys("Camara")
         search_buttom = self.driver.find_element(By.CLASS_NAME,'input-group-text')
         search_buttom.click()
@@ -36,3 +34,4 @@ class searchBarTests(unittest.TestCase):
     
 if __name__ == "__main__":
 		unittest.main()
+        
